@@ -62,6 +62,3 @@ async function setColors() {
     }, ${inputsColors1.value ? inputsColors1.value : "hsl(264, 100%, 61%)"})`;
   });
 }
-
-
-console.log(Date.prototype)
