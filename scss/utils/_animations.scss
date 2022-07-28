@@ -1,0 +1,74 @@
+@keyframes leftAppear {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rightAppear {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.message1,
+.message2,
+.message6,
+.message7,
+.message8 {
+  animation: leftAppear 1s backwards;
+}
+
+.message2 {
+  animation-delay: 0.25s;
+}
+.message6 {
+  animation-delay: 1.25s;
+}
+.message7 {
+  animation-delay: 1.5s;
+}
+.message8 {
+  animation-delay: 1.75s;
+}
+
+.message3,
+.message4,
+.message5 {
+  animation: rightAppear 1s 0.5s backwards;
+}
+
+.message4 {
+  animation-delay: 0.75s;
+}
+
+.message5 {
+  animation-delay: 1s;
+}
+
+
+h1{
+  animation: textAppear 1s cubic-bezier(0.215, 0.610, 0.355, 1.000);
+}

@@ -1,0 +1,452 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: red;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes leftAppear {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes rightAppear {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes textAppear {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.message1,
+.message2,
+.message6,
+.message7,
+.message8 {
+  animation: leftAppear 1s backwards;
+}
+
+.message2 {
+  animation-delay: 0.25s;
+}
+
+.message6 {
+  animation-delay: 1.25s;
+}
+
+.message7 {
+  animation-delay: 1.5s;
+}
+
+.message8 {
+  animation-delay: 1.75s;
+}
+
+.message3,
+.message4,
+.message5 {
+  animation: rightAppear 1s 0.5s backwards;
+}
+
+.message4 {
+  animation-delay: 0.75s;
+}
+
+.message5 {
+  animation-delay: 1s;
+}
+
+h1 {
+  animation: textAppear 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.b-red {
+  border: 2px solid red;
+}
+
+.b-blue {
+  border: 2px solid blue;
+}
+
+.b-green {
+  border: 2px solid green;
+}
+
+.b-orange {
+  border: 2px solid orange;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+main .container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  transform: translateX(75px);
+  margin: 0 auto;
+}
+@media screen and (max-width: 1075px) {
+  main .container {
+    transform: translateX(0px);
+    margin: 0 1rem 0 5rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  main .container {
+    flex-direction: column;
+    margin: 0 1rem;
+    align-items: center;
+    margin-top: 5rem;
+  }
+}
+main .container .phone {
+  position: relative;
+  z-index: 20 !important;
+  max-width: 325px;
+  width: 100%;
+  border: 12px solid white;
+  border-radius: 40px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+  background: hsl(270deg, 20%, 96%);
+  overflow: hidden;
+}
+main .container .phone .header-phone {
+  background: linear-gradient(to left, hsl(293deg, 100%, 63%), hsl(264deg, 100%, 61%));
+  border-radius: 30px 30px 5px 5px;
+  display: flex;
+  align-items: flex-end;
+  height: 100px;
+  padding-bottom: 1rem;
+  color: white;
+  position: relative;
+  cursor: pointer;
+}
+main .container .phone .header-phone::before {
+  content: "";
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  border-radius: 15px;
+  position: absolute;
+  background: white;
+  width: 200px;
+  height: 40px;
+}
+main .container .phone .header-phone .fa-chevron-left {
+  margin-right: 0.5rem;
+}
+main .container .phone .header-phone .status {
+  color: hsl(270deg, 7%, 64%);
+  font-size: 0.7rem;
+}
+main .container .phone .header-phone .infos {
+  width: 60%;
+  margin-right: auto;
+}
+main .container .phone .header-phone .header-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+main .container .phone .header-phone .picture {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+main .container .phone .header-phone img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+main .container .phone .body-phone {
+  padding: 0.75rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+main .container .phone .body-phone .message {
+  display: flex;
+  align-items: center;
+  width: 57%;
+  border-radius: 14px;
+  padding: 0.75rem;
+  font-size: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+main .container .phone .body-phone .message1,
+main .container .phone .body-phone .message2,
+main .container .phone .body-phone .message6 {
+  border-bottom-left-radius: 5px;
+  margin-right: auto;
+  color: hsl(276deg, 55%, 52%);
+  background: #ede5f4;
+}
+main .container .phone .body-phone .message3 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 60%;
+}
+main .container .phone .body-phone .message3 img {
+  width: 47px;
+  border-radius: 10px;
+}
+main .container .phone .body-phone .message4,
+main .container .phone .body-phone .message5 {
+  border-bottom-right-radius: 5px;
+  background: white;
+  color: black;
+}
+main .container .phone .body-phone .message7,
+main .container .phone .body-phone .message8 {
+  background: linear-gradient(to left, hsl(264deg, 100%, 61%), hsl(293deg, 100%, 63%));
+  margin-right: auto;
+  border-bottom-left-radius: 5px;
+  color: hsl(270deg, 20%, 96%);
+  width: 70%;
+}
+main .container .phone .body-phone .message7 p,
+main .container .phone .body-phone .message8 p {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+main .container .phone .body-phone .round {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 0.5rem;
+}
+main .container .phone .body-phone .price {
+  display: inline-block;
+  margin-left: auto;
+  font-weight: bold;
+  font-size: 1rem;
+  padding-right: 0.75rem;
+}
+main .container .phone .body-phone .message5 {
+  width: auto;
+  display: inline-block;
+}
+main .container .phone .footer-phone {
+  display: flex;
+  align-items: center;
+  margin: 0 0.75rem 0.5rem 0.75rem;
+  background: white;
+  border-radius: 20px;
+}
+main .container .phone .footer-phone p {
+  padding: 0.75rem;
+  font-size: 0.7rem;
+  margin-left: 1rem;
+  color: hsl(270deg, 7%, 64%);
+}
+main .container .phone .footer-phone .fa-circle-chevron-right {
+  color: hsl(271deg, 36%, 24%);
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  margin-right: 0.2rem;
+  margin-left: auto;
+}
+main .container .description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 60%;
+}
+@media screen and (max-width: 1075px) {
+  main .container .description {
+    width: 55%;
+  }
+}
+@media screen and (max-width: 900px) {
+  main .container .description {
+    width: 55%;
+    text-align: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  main .container .description {
+    width: 90%;
+  }
+}
+main .container .description h1 {
+  color: hsl(271deg, 36%, 24%);
+  font-size: 3rem;
+  font-weight: 500;
+}
+@media screen and (max-width: 450px) {
+  main .container .description h1 {
+    font-size: 2rem;
+  }
+}
+main .container .description p {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: hsl(270deg, 7%, 64%);
+  font-weight: 300;
+  width: 70%;
+}
+@media screen and (max-width: 1075px) {
+  main .container .description p {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  main .container .description p {
+    font-size: 0.9rem;
+  }
+}
+
+.form1 {
+  position: absolute;
+  height: 90%;
+  border-radius: 0 0 300px 300px;
+  width: 600px;
+  left: -100px;
+  background: linear-gradient(to bottom, hsl(293deg, 100%, 63%), 30%, hsl(264deg, 100%, 61%));
+  cursor: pointer;
+  z-index: 0;
+}
+@media screen and (max-width: 900px) {
+  .form1 {
+    width: 400px;
+    height: 600px;
+    left: -150px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .form1 {
+    width: 350px;
+    height: 500px;
+  }
+}
+
+.form2 {
+  position: absolute;
+  height: 90%;
+  border-radius: 300px 300px 0 0;
+  background: hsl(270deg, 20%, 96%);
+  width: 600px;
+  right: -100px;
+  bottom: 0;
+  z-index: -1;
+}
+@media screen and (max-width: 900px) {
+  .form2 {
+    width: 400px;
+    height: 600px;
+    right: -150px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .form2 {
+    width: 350px;
+    height: 500px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  min-width: 100%;
+  height: 100%;
+  z-index: 4;
+  background: transparent;
+}
+.overlay .popup-input-color {
+  padding: 1rem;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: 2;
+  max-width: 400px;
+  width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+}
+@media screen and (max-width: 900px) {
+  .overlay .popup-input-color {
+    width: 325px;
+  }
+}
+.overlay .popup-input-color .input-color {
+  width: 100px;
+  height: 50px;
+  background: none;
+  border: none;
+  z-index: 2;
+  cursor: pointer;
+}
+.overlay .popup-input-color h2 {
+  color: black;
+}
+@media screen and (max-width: 900px) {
+  .overlay .popup-input-color h2 {
+    font-size: 1.2rem;
+  }
+}
+.overlay .popup-input-color .fa-solid.fa-xmark {
+  color: black;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
